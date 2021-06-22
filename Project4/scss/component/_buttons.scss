@@ -1,0 +1,31 @@
+/* ============================================= */
+/*              Buttons                          */
+/* ============================================= */
+
+.btn {
+  margin-top: 15px;
+  width: 100%;
+  color: $white;
+  border: none;
+  padding: 10px 0;
+  text-transform: uppercase;
+  border-radius: 5px;
+
+ // Personal Reminder 
+ //transition: background-color 0.4s ease-in-out;
+ // &:hover {
+ //   background-color: $color-hover-light;
+ // }
+ 
+}
+
+@each $theme, $color in $button-colors {
+  .#{$theme} {
+      background-color: $color;
+      &:hover {
+        background-color: lighten($color, 15%);
+      }
+  }
+}
+
+  

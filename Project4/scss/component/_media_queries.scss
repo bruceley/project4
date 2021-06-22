@@ -1,0 +1,70 @@
+/* ============================================= */
+/*              Media Queries                    */
+/* ============================================= */
+
+@media #{$brk-point} {
+
+  .container {
+    max-width: 1400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .centered {
+    @include image-prop;
+  }
+  
+  .row {
+    flex-direction: row;
+  }
+  
+  [class^=col] {
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    align-items: center;
+  }
+  
+  [class^=col] + [class^=col] {
+    margin-left: 10px;
+  }
+
+  // Serves as a reminder of another way of doing it:
+  // ref var in variables.css
+  
+  
+  // @each $val, $size in $flexb-size {
+  //   .col-#{$val} {
+  //     flex-basis: $size;
+  //   }
+  // }
+
+  @for $i from 1 through 12 {
+    .col-#{$i} {
+      flex-basis: calc(#{$i}*8.33%);
+    }
+  }
+
+  .nav {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    &-link {
+      flex-basis: 100px;
+    }
+  }
+  
+  .btn {
+    padding: 10px 30px;
+  }
+  
+  .btn + .btn {
+    margin-left: 10px;
+  }
+  
+  .logo {
+    margin-left: initial;
+    margin-right: initial;
+  }    
+}
